@@ -39,15 +39,15 @@ export default function Card() {
               src={el.image}
               alt=""
             />
-            <h3>{el.name}</h3>
-            <h4>{el.location.name}</h4>
+            <h3 className="name">{el.name}</h3>
+            <h4 className="location">{el.location.name}</h4>
             {(() => {
               if (el.status === 'Dead') {
-                return <div className="badge bg-danger fs-5">{el.status}</div>;
+                return <div className="badgeRed">{el.status}</div>;
               } if (el.status === 'Alive') {
-                return <div className=" badge bg-success fs-5">{el.status}</div>;
+                return <div className="badgeGreen bg-success fs-5">{el.status}</div>;
               }
-              return <div className="badge bg-secondary fs-5">{el.status}</div>;
+              return <div className="badgeGrey bg-secondary fs-5">{el.status}</div>;
             })()}
           </div>
         ))}
